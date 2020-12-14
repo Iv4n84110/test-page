@@ -46,7 +46,7 @@
       <div class="column-1">
         <div>
           <span v-if="index > 0" class="or or-cardStatus">или</span>
-          <span>Тип {{ index + 1 }}</span>
+          <span>Статус {{ index + 1 }}</span>
         </div>
       </div>
       <div class="column-2">
