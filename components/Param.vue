@@ -78,7 +78,7 @@ export default {
         condition,
         index,
         col,
-        value: e.target.value,
+        value: +e.target.value,
       });
     },
   },

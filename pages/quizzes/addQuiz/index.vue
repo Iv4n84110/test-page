@@ -25,7 +25,7 @@
     </div>
     <div class="buttons">
       <button class="test">Протестировать опрос</button>
-      <button class="next">Далее</button>
+      <button class="next" @click="sendData">Далее</button>
     </div>
   </div>
 </template>
@@ -41,6 +41,17 @@ export default {
     addCondition() {
       this.$store.commit("conditions/addCondition");
       console.log(this.$store.getters["conditions/conditions"]);
+    },
+
+    async sendData() {
+      console.log(this.$store.getters["conditions/conditions"]);
+      let response = await fetch("some/url", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(this.$store.getters["conditions/conditions"]),
+      });
     },
   },
 };
